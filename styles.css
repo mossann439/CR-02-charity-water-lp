@@ -192,10 +192,20 @@ body, header, .donate-btn-container {
   box-shadow: none;
 }
 
+/* Use a simple fallback font for the whole page */
+body,
+header,
+.story,
+.cta-text,
+.donate-btn,
+.brand-name {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 /* Use Red Hat Display for the header and story */
 header,
 .story {
-  font-family: 'Red Hat Display', Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; /* Use fallback font for headline and story */
 }
 
 header h1,
