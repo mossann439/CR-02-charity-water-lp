@@ -17,3 +17,276 @@ Fonts:
 - Avenir
 
 */
+
+/* styles.css - This file is currently blank. 
+   You can add your CSS styles here to change how your page looks. */
+
+/* Set the background color of the whole page to a yellow gradient */
+body {
+  /* Add a mountain landscape image at the top, fading into yellow gradient */
+  background: 
+    linear-gradient(to bottom, rgba(255, 255, 255, 0) 250px, #FFE066 400px, #FFC907 100%),
+    url('img/mountains.jpg') no-repeat top center;
+  background-size: cover, cover;
+}
+
+/* Add a mountain image only behind the top image and header */
+.header-bg {
+  width: 100%;
+  height: 260px; /* Adjust height as needed */
+  /* You can change the image URL below to use your own image */
+  background: url('img/mountains.jpg') no-repeat center top;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Behind header content */
+}
+
+/* Make sure header content is above the background image */
+header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Glacial Indifference', Arial, sans-serif;
+}
+
+/* Make the header and title larger and center them */
+header h1 {
+  font-size: 3.5em;     /* Make the main title slightly bigger */
+  margin-bottom: 10px;  /* Add space below the title */
+}
+
+header p {
+  font-size: 1.7em;     /* Make the subtitle slightly bigger */
+}
+
+/* Style for the Donate button */
+.donate-btn {
+  background: linear-gradient(to right, #2E9DF7, #8BD1CB); /* gradient bright blue */
+  color: white;
+  font-size: 1.3em;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.donate-btn:hover {
+  background: linear-gradient(to right, #159A48, #4FCB53); /* green gradient on hover */
+  transform: scale(1.05);
+}
+
+/* Container to keep the donate button at the bottom */
+.donate-btn-container {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFC907; /* Match the yellow tint of the rest of the page */
+  padding: 40px 0 30px 0;
+  display: flex;              /* Use flex to stack children vertically */
+  flex-direction: column;     /* Stack children (CTA and button) vertically */
+  align-items: center;        /* Center them horizontally */
+}
+
+/* Style for the subheader under the main header */
+.subheader {
+  font-size: 1.2em;           /* Slightly larger text */
+  color: #2E9DF7;             /* charity: water blue */
+  margin-top: 10px;           /* Space above the subheader */
+  margin-bottom: 0;           /* No extra space below */
+}
+
+/* Container for positioning corner images relative to the center image */
+.center-image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Make sure the main image fills the container */
+.center-image-container .header-image {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  margin: 10px auto 0;
+}
+
+/* Style for the image in the far right corner */
+.corner-image {
+  position: absolute;
+  top: 10px;         /* Adjust as needed */
+  right: 10px;       /* Adjust as needed */
+  width: 60px;       /* Set a small size for the corner image */
+  height: 60px;
+  border-radius: 50%; /* Make it round if you like */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* Style for the image below the subheader */
+.header-image {
+  display: block;        /* Make the image a block element */
+  margin: 10px auto 0;   /* Move the image upward by reducing the top margin */
+  max-width: 800px;      /* Original larger size */
+  width: 100%;           /* Make image responsive */
+  border-radius: 10px;   /* Slightly rounded corners */
+}
+
+/* Style for the title image (replaces the main title text) */
+.title
+  display: block;
+  margin: 0 auto 20px auto; /* Center the image and add space below */
+  max-width: 400px;         /* Limit the size for beginners */
+  width: 100%;
+  height: auto;
+}
+
+/* Add some simple, eye-catching circles to the background */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.25; /* Make the shapes subtle */
+  z-index: 0;    /* Keep behind all content */
+  pointer-events: none; /* Let users click through */
+}
+
+/* Large blue circle at the top left */
+body::before {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  background: #2E9DF7;
+}
+
+/* Large light blue circle at the bottom right */
+body::after {
+  width: 250px;
+  height: 250px;
+  bottom: -80px;
+  right: -80px;
+  background: #8BD1CB;
+}
+
+/* Make sure content appears above the background graphics */
+body, header, .donate-btn-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Style for the story section */
+.story {
+  font-size: 0.90em;          /* Make the story text smaller than the headline */
+  color: #00bcd4;             /* Aqua color for the story text */
+  /* Remove the background color for no light box */
+  border-radius: 8px;
+  padding: 2px 24px;
+  margin: 2px auto 0 auto;
+  max-width: 800px;
+  box-shadow: none;
+}
+
+/* Use Red Hat Display for the header and story */
+header,
+.story {
+  font-family: 'Red Hat Display', Arial, sans-serif;
+}
+
+header h1,
+.title-image {
+  /* The headline (image or h1) is visually larger by default */
+}
+
+/* Style for the solid horizontal line between header and story */
+.header-divider {
+  border: none;
+  border-top: 3px solid #2E9DF7; /* charity: water blue */
+  width: 60%;
+  margin: 24px auto 16px auto;   /* space above and below, centered */
+}
+
+/* Style for the call to action text above the donate button */
+.cta-text {
+  font-size: 1.5em;
+  color: #000;
+  margin-bottom: 12px;
+  margin-top: 0;
+  /* Removed background gradient and related styles */
+  padding: 8px 0;
+  border-radius: 5px;
+  display: block;             /* Make sure CTA is on its own line */
+  width: 90%;
+  box-sizing: border-box;
+}
+
+/* Style for the brand name in the header */
+.brand-name {
+  font-size: 1.2em;           /* Smaller font size for Charity: Water */
+  color: #000;
+  margin: 12px 0 8px 0;
+  font-family: 'Red Hat Display', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Center the headline section vertically and horizontally */
+.headline-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* Center horizontally */
+  justify-content: center;  /* Center vertically */
+  min-height: 80vh;         /* Take up most of the page height */
+}
+
+/* Simple footer style for contact information */
+.footer {
+  background: #2E9DF7;           /* charity: water blue */
+  color: #fff;                   /* white text */
+  text-align: center;            /* center the text */
+  padding: 18px 10px 18px 10px;  /* space above and below */
+  font-size: 1em;                /* easy to read */
+  position: relative;            /* stays at the bottom of content */
+  z-index: 2;                    /* above background shapes */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  header {
+    margin-top: 20px; /* Less space at the top on small screens */
+  }
+
+  .header-image {
+    max-width: 100%;  /* Make sure image fits on small screens */
+  }
+
+  .story {
+    max-width: 98%;   /* Story box fits screen */
+    padding: 2px 8px; /* Less padding on small screens */
+    font-size: 0.95em; /* Slightly larger for readability */
+  }
+
+  .header-divider {
+    width: 90%;       /* Divider fits screen */
+  }
+
+  .cta-text {
+    font-size: 1.1em; /* Slightly smaller CTA text */
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .donate-btn {
+    font-size: 1em;   /* Smaller button text */
+    padding: 10px 18px;
+  }
+
+  .donate-btn-container {
+    padding: 24px 0 18px 0; /* Less padding at the bottom */
+  }
+}
